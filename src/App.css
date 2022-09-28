@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.slideshow {
+  overflow: hidden;
+  max-width: 500px;
+}
+.slideshowSlider {
+  white-space: nowrap;
+  transition: ease 1000ms;
+}
+.slide {
+  display: inline-block;
+  height: 400px;
+  width: 100%;
+  border-radius: 5px;
+}
