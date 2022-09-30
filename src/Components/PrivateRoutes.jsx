@@ -1,14 +1,13 @@
 import React from 'react'
 import { useContext } from 'react'
 import { Navigate } from 'react-router-dom'
-import { AppContext } from '../ContextSignup/AppContext'
+import { LoginContext } from '../ContextLogin/LoginContext'
 
 function PrivateRoutes({children}) {
-  const {state} = useContext(AppContext)
+  const {state} = useContext(LoginContext)
 if(!state.isAuth){  
   return (
-
-    <Navigate to="/login"/>
+  <Navigate to="/login"/>
   )
 }
   return children

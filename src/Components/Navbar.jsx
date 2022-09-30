@@ -17,7 +17,6 @@ import {
   ModalHeader,
   ModalOverlay,
   Spacer,
-  Text,
   useDisclosure,
 } from "@chakra-ui/react";
 import axios from "axios";
@@ -124,7 +123,7 @@ function Navbar() {
         </Box>
         <Spacer />
 
-        {!state.name ? (
+        
           <Box>
             <Button onClick={onOpen} p="4" colorScheme="blue" mt={7}>
               Signup on Kindmeal
@@ -207,11 +206,7 @@ function Navbar() {
               Login
             </Button>
           </Box>
-        ) : (
-          <Box>
-            <Text> hii {state.name}</Text>
-          </Box>
-        )}
+        
       </Flex>
       <Box
         color="white"

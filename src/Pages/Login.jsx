@@ -1,6 +1,9 @@
 import {
+  Alert,
+  AlertIcon,
   Box,
   Button,
+  CloseButton,
   Container,
   Heading,
   Input,
@@ -10,10 +13,15 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import React from "react";
+import { useContext } from "react";
 import { useState } from "react";
+import { Navigate } from "react-router-dom";
 import Navbar from "../Components/Navbar";
+import { LoginFailureAction, LoginLoading, LoginSuccess,ErrorHandling } from "../ContextLogin/action";
+import { LoginContext } from "../ContextLogin/LoginContext";
 
 function Login() {
+  const {state,dispatch} = useContext(LoginContext);
   const [login, setLogin] = useState({
     email: "",
     password: "",
@@ -23,15 +31,36 @@ function Login() {
     setLogin({ ...login, [name]: value });
   };
   const handleLogin = (login)=>{
-    
+    dispatch(LoginLoading)
     axios.post(`https://immense-wildwood-85705.herokuapp.com/user/Login`,{
       username :login.email,
       password:login.password,
-    }).then((res)=>console.log(res.data)).catch((err)=>console.log('error'))
+    }).then((res)=>{console.log(res.data.token)
+    dispatch(LoginSuccess)
+    }).catch((err)=>{
+      dispatch(LoginFailureAction)
+      console.log('error')})
+  }
+  const handleError = () => {
+    dispatch(ErrorHandling)
+  }
+  if(state.isAuth){
+   return <Navigate to="/product"/>
   }
   return (
     <Box>
-      <Navbar />
+      {state.error ? <Alert status="error">
+             <AlertIcon />
+             There was an error processing your request
+           <CloseButton
+               alignSelf="flex-start"
+                position="relative"
+                right={-1}
+                top={-1}
+               onClick={handleError}
+              />
+           </Alert> :  <Navbar />}
+     
 
       <Heading>Login and activate your account</Heading>
       <Container mt={10}>
@@ -53,7 +82,7 @@ function Login() {
           />
           <Spacer></Spacer>
         </Stack>
-        <Button colorScheme="red" onClick={()=>handleLogin(login)}>Login</Button>
+        <Button colorScheme="red" isLoading={state.loading} onClick={()=>handleLogin(login)}>Login</Button>
       </Container>
     </Box>
   );
