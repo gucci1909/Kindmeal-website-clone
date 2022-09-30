@@ -1,5 +1,6 @@
 import { Box,Icon,Image, Spacer, Text, Tooltip } from "@chakra-ui/react";
 import React from "react";
+import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar"
 import data from "../data.json"
 
@@ -78,6 +79,19 @@ function Home() {
         ))}
       </Box>
     </Box>
+
+    <Box mt='60px'>
+      <Text fontSize='3xl'>Amazing Superheroes</Text>
+      <Box ml='30px' mr='40px' textAlign='centre' display='Flex' gap='1rem'>
+        {data.Amazing_superheroes && data.Amazing_superheroes.map((el)=>(
+        <Box key={el.id}>
+           <Image cursor={'pointer'} src={el.img} h='300px' w='400px' alt={el.id}></Image>
+           <Text fontSize='xl'>{el.title}</Text>
+        </Box>
+        ))}
+      </Box>
+    </Box>
+    <Footer/>
      </>)
 }
 
