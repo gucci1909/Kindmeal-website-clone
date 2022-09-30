@@ -24,12 +24,12 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { AppContext } from "../Context/AppContext";
+import { AppContext } from "../ContextSignup/AppContext";
 import {
   SignupFailureAction,
   SignupLoading,
   SignupSuccess,
-} from "../Context/action";
+} from "../ContextSignup/action";
 
 function Navbar() {
   const bg = "#68D391";
