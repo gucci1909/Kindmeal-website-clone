@@ -5,7 +5,6 @@ import reducer from './Reducer';
 export const AppContext = createContext();
 function AppContextProvider({children}){
   const InitState = {
-    name : '',
     loading : false,
     error : false
   }
