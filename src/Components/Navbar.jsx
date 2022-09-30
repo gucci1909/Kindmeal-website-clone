@@ -17,6 +17,9 @@ import {
   ModalHeader,
   ModalOverlay,
   Spacer,
+  Stack,
+  Switch,
+  Text,
   useDisclosure,
 } from "@chakra-ui/react";
 import axios from "axios";
@@ -45,6 +48,7 @@ function Navbar() {
   const finalRef = React.useRef(null);
   const navigate = useNavigate();
   const [success, setSuccess] = useState(false);
+  const [dark,setDark] = useState(false);
   const handleLogin = () => {
     navigate("/login");
   };
@@ -52,6 +56,11 @@ function Navbar() {
     const { value, name } = e.target;
     setSignup({ ...signup, [name]: value });
   };
+  const handleDark = (value)=>{
+    document.documentElement.setAttribute("data-theme", value);
+    document.title = `kindmeal - ${value}`
+    setDark(!dark);
+  }
 
   const handleSignup = (signup) => {
     dispatch(SignupLoading);
@@ -122,6 +131,10 @@ function Navbar() {
           />
         </Box>
         <Spacer />
+        <Stack align='center' direction='row' mr={3}>
+          <Text> Turn {dark ? "off" : "on" } Dark Mode</Text>
+  <Switch size='lg' isChecked={dark ? true : false}  onChange={()=>handleDark(dark ? "light" :  "dark")} />
+</Stack>
         <Box>
             <Button onClick={onOpen} p="4" colorScheme="blue" mt={7}>
               Signup on Kindmeal
@@ -129,17 +142,19 @@ function Navbar() {
             <Modal
               initialFocusRef={initialRef}
               finalFocusRef={finalRef}
+              bgColor={dark ? '#000000' : "#000000"}
               isOpen={isOpen}
               onClose={onClose}
             >
               <ModalOverlay />
               <ModalContent>
-                <ModalHeader>Create your account</ModalHeader>
+                <ModalHeader color={dark ? '#000000' : "#000000"}>Create your account</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody pb={6}>
                   <FormControl>
-                    <FormLabel>Username</FormLabel>
+                    <FormLabel color={dark ? '#000000' : "#000000"}>Username</FormLabel>
                     <Input
+                       bgColor={dark ? '#2A4365' : "white"}
                       onChange={handleChange}
                       value={signup.username}
                       name="username"
@@ -148,8 +163,9 @@ function Navbar() {
                   </FormControl>
 
                   <FormControl mt={4}>
-                    <FormLabel>Email Address</FormLabel>
+                    <FormLabel color={dark ? '#000000' : "#000000"}>Email Address</FormLabel>
                     <Input
+                    bgColor={dark ? '#2A4365' : "white"}
                       value={signup.email}
                       onChange={handleChange}
                       name="email"
@@ -158,8 +174,9 @@ function Navbar() {
                   </FormControl>
 
                   <FormControl mt={4}>
-                    <FormLabel>Password</FormLabel>
+                    <FormLabel color={dark ? '#000000' : "#000000"}>Password</FormLabel>
                     <Input
+                    bgColor={dark ? '#2A4365' : ""}
                       value={signup.password}
                       type="password"
                       onChange={handleChange}
@@ -168,8 +185,9 @@ function Navbar() {
                     />
                   </FormControl>
                   <FormControl mt={4}>
-                    <FormLabel>Phone No.</FormLabel>
+                    <FormLabel color={dark ? '#000000' : "#000000"}>Phone No.</FormLabel>
                     <Input
+                    bgColor={dark ? '#2A4365' : "white"}
                       value={signup.phone}
                       onChange={handleChange}
                       type="number"
@@ -188,7 +206,7 @@ function Navbar() {
                   >
                     Signup
                   </Button>
-                  <Button onClick={onClose} w="180px">
+                  <Button color={dark ? "#2A4365" : ""} onClick={onClose} w="180px">
                     Cancel
                   </Button>
                 </Flex>
