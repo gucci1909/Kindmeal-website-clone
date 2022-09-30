@@ -23,8 +23,7 @@ function Home() {
     };
   },[index]);
 
-  return (<>
-     
+  return (<Box>
     <Navbar/>
     <Box style={{display:"flex" ,alignItems:"centre"}}>
       <Box  display='flex'  alignItems='centre' justifyContent="centre" ml="220px" className="slideshow">
@@ -92,7 +91,7 @@ function Home() {
       </Box>
     </Box>
     <Footer/>
-     </>)
+     </Box>)
 }
 
 export default Home

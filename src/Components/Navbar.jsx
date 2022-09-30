@@ -113,7 +113,7 @@ function Navbar() {
     );
   }
   return (
-    <>
+    <Box>
       <Flex>
         <Box p="2">
           <Image
@@ -122,9 +122,7 @@ function Navbar() {
           />
         </Box>
         <Spacer />
-
-        
-          <Box>
+        <Box>
             <Button onClick={onOpen} p="4" colorScheme="blue" mt={7}>
               Signup on Kindmeal
             </Button>
@@ -231,7 +229,7 @@ function Navbar() {
           Home
         </NavLink>
         <NavLink
-          to="/uyg"
+          to="/mealdeals"
           style={({ isActive }) => ({
             backgroundColor: isActive ? "#2F855A" : "#68D391",
             color: "white",
@@ -252,7 +250,7 @@ function Navbar() {
           KindMoments
         </NavLink>
         <NavLink
-          to="/juyhg"
+          to="/hotpicks"
           style={({ isActive }) => ({
             backgroundColor: isActive ? "#2F855A" : "#68D391",
             color: "white",
@@ -263,7 +261,7 @@ function Navbar() {
           Hot Picks
         </NavLink>
         <NavLink
-          to="/kiuh"
+          to="/recipes"
           style={({ isActive }) => ({
             backgroundColor: isActive ? "#2F855A" : "#68D391",
             color: "white",
@@ -274,7 +272,7 @@ function Navbar() {
           Recipes
         </NavLink>
         <NavLink
-          to="/uyg"
+          to="/directory"
           style={({ isActive }) => ({
             backgroundColor: isActive ? "#2F855A" : "#68D391",
             color: "white",
@@ -285,7 +283,7 @@ function Navbar() {
           Directory
         </NavLink>
         <NavLink
-          to="/iuyg"
+          to="/articles"
           style={({ isActive }) => ({
             backgroundColor: isActive ? "#2F855A" : "#68D391",
             color: "white",
@@ -296,7 +294,7 @@ function Navbar() {
           Articles
         </NavLink>
         <NavLink
-          to="/iuytg"
+          to="/help"
           style={({ isActive }) => ({
             backgroundColor: isActive ? "#2F855A" : "#68D391",
             color: "white",
@@ -307,7 +305,7 @@ function Navbar() {
           Help
         </NavLink>
       </Box>
-    </>
+    </Box>
   );
 }
 
