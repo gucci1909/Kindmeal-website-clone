@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Image, Spacer, Text } from "@chakra-ui/react";
+import { Box,Icon,Image, Spacer, Text, Tooltip } from "@chakra-ui/react";
 import React from "react";
 import Navbar from "../Components/Navbar"
 import data from "../data.json"
@@ -40,17 +40,44 @@ function Home() {
       <Image h="400px" w="450px" src="https://www.kindmeal.my/photos/shop/5/596-4521-m.jpg"></Image>
     </Box>
     </Box>
-    <Container>
+    <Box>
       <Text fontSize='3xl'>Latest News & Videos</Text>
-      <Flex w='1000px'  gap='1rem'>
+      <Box ml='30px' mr='40px' textAlign='centre' display='Flex' gap='1rem'>
         {data.Latest_newVideo && data.Latest_newVideo.map((el)=>(
-        <Box h='500' w='500px'  key={el.id}>
-           <Image h='500' w='500px'  src={el.img} alt={el.id}></Image>
-           {/* <Text fontSize='xl'>{el.title}</Text> */}
+        <Box key={el.id}>
+           <Image cursor={'pointer'} src={el.img} h='300px' w='400px' alt={el.id}></Image>
+           <Text fontSize='xl'>{el.title}</Text>
         </Box>
         ))}
-      </Flex>
-    </Container>
+      </Box>
+    </Box>
+    <Spacer></Spacer>
+    <Tooltip hasArrow label="Search for food" placement="top">
+  <Icon name="search" />
+</Tooltip>
+    <Box mt='100px'>
+      <Text fontSize='3xl'>Yummylicious Moments</Text>
+      <Box ml='30px' mr='40px' textAlign='centre' display='Flex' gap='1rem'>
+        {data.Yummylicious && data.Yummylicious.map((el)=>(
+        <Box key={el.id}>
+           <Image cursor={'pointer'} src={el.img} h='300px' w='400px' alt={el.id}></Image>
+           <Text fontSize='xl'>{el.title}</Text>
+        </Box>
+        ))}
+      </Box>
+    </Box>
+
+    <Box mt='60px'>
+      <Text fontSize='3xl'>Discover Restaurants</Text>
+      <Box ml='30px' mr='40px' textAlign='centre' display='Flex' gap='1rem'>
+        {data.Dicover_restaurants && data.Dicover_restaurants.map((el)=>(
+        <Box key={el.id}>
+           <Image cursor={'pointer'} src={el.img} h='300px' w='400px' alt={el.id}></Image>
+           <Text fontSize='xl'>{el.title}</Text>
+        </Box>
+        ))}
+      </Box>
+    </Box>
      </>)
 }
 
