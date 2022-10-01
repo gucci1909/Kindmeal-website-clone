@@ -4,6 +4,7 @@ import PrivateRoutes from '../Components/PrivateRoutes'
 import Home from './Home'
 import Login from './Login'
 import Product from './Product'
+import SingleUser from './SingleUser'
 
 function AllRoutes() {
   return (
@@ -16,6 +17,14 @@ function AllRoutes() {
        </PrivateRoutes> 
         }></Route>
         <Route path='/login' element={<Login/>}></Route>
+        <Route
+        path="/product/:id"
+        element={
+          <PrivateRoutes>
+            <SingleUser />
+          </PrivateRoutes>
+        }
+      ></Route>
     </Routes>
   )
 }

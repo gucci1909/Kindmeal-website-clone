@@ -1,4 +1,4 @@
-import { Box,Icon,Image, Spacer, Text, Tooltip } from "@chakra-ui/react";
+import { Box,Icon,Image, Spacer, Text, Tooltip, useBreakpoint } from "@chakra-ui/react";
 import React from "react";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar"
@@ -8,6 +8,14 @@ const images = ["https://www.kindmeal.my/photos/deal/7/703-4854-m.jpg", "https:/
 function Home() {
   const [index, setIndex] = React.useState(0);
   const timeoutRef = React.useRef(null);
+  const breakPoints = useBreakpoint({
+    base: "base",
+    sm : "small",
+    md :"medium",
+    lg:"large",
+    xl : "xl",
+    "2xl" : '2xl'
+  })
 
   const resetTimeout=()=> {
     if (timeoutRef.current) {
@@ -42,7 +50,7 @@ function Home() {
     </Box>
     <Box>
       <Text fontSize='3xl'>Latest News & Videos</Text>
-      <Box ml='30px' mr='40px' textAlign='centre' display='Flex' gap='1rem'>
+      <Box ml={{ md: '270px', lg: '200px',xl:'30px' }} mr={{ md: 'auto', lg: '0px',xl:"40px" }} textAlign='centre' display='Flex' gap='1rem'>
         {data.Latest_newVideo && data.Latest_newVideo.map((el)=>(
         <Box key={el.id}>
            <Image cursor={'pointer'} src={el.img} h='300px' w='400px' alt={el.id}></Image>
@@ -57,7 +65,7 @@ function Home() {
 </Tooltip>
     <Box mt='100px'>
       <Text fontSize='3xl'>Yummylicious Moments</Text>
-      <Box ml='30px' mr='40px' textAlign='centre' display='Flex' gap='1rem'>
+      <Box  ml={{ md: '270px', lg: '200px',xl:'30px' }} mr={{ md: 'auto', lg: '0px',xl:"40px" }} textAlign='centre' display='Flex' gap='1rem'>
         {data.Yummylicious && data.Yummylicious.map((el)=>(
         <Box key={el.id}>
            <Image cursor={'pointer'} src={el.img} h='300px' w='400px' alt={el.id}></Image>
@@ -69,7 +77,7 @@ function Home() {
 
     <Box mt='60px'>
       <Text fontSize='3xl'>Discover Restaurants</Text>
-      <Box ml='30px' mr='40px' textAlign='centre' display='Flex' gap='1rem'>
+      <Box ml={{ md: '270px', lg: '200px',xl:'30px' }} mr={{ md: 'auto', lg: '0px',xl:"40px" }} textAlign='centre' display='Flex' gap='1rem'>
         {data.Dicover_restaurants && data.Dicover_restaurants.map((el)=>(
         <Box key={el.id}>
            <Image cursor={'pointer'} src={el.img} h='300px' w='400px' alt={el.id}></Image>
@@ -81,7 +89,7 @@ function Home() {
 
     <Box mt='60px'>
       <Text fontSize='3xl'>Amazing Superheroes</Text>
-      <Box ml='30px' mr='40px' textAlign='centre' display='Flex' gap='1rem'>
+      <Box  ml={{ md: '270px', lg: '200px',xl:'30px' }} mr={{ md: 'auto', lg: '0px',xl:"40px" }} textAlign='centre' display='Flex' gap='1rem'>
         {data.Amazing_superheroes && data.Amazing_superheroes.map((el)=>(
         <Box key={el.id}>
            <Image cursor={'pointer'} src={el.img} h='300px' w='400px' alt={el.id}></Image>
