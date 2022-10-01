@@ -33,7 +33,6 @@ function Home() {
 
   return (<Box>
     <Navbar/>
-    <Text>{breakPoints}</Text>
     <Box style={{display:"flex" ,alignItems:"centre"}}>
       <Box  display='flex'  alignItems='centre' justifyContent="centre" ml="220px" className="slideshow">
       <Box className="slideshowSlider" style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}>
