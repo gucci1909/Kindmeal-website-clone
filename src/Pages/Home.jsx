@@ -1,4 +1,4 @@
-import { Box,Icon,Image, Spacer, Text, Tooltip, useBreakpoint } from "@chakra-ui/react";
+import { Box,Icon,Image, Spacer, Text, Tooltip } from "@chakra-ui/react";
 import React from "react";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar"
@@ -8,14 +8,14 @@ const images = ["https://www.kindmeal.my/photos/deal/7/703-4854-m.jpg", "https:/
 function Home() {
   const [index, setIndex] = React.useState(0);
   const timeoutRef = React.useRef(null);
-  const breakPoints = useBreakpoint({
-    base: "base",
-    sm : "small",
-    md :"medium",
-    lg:"large",
-    xl : "xl",
-    "2xl" : '2xl'
-  })
+  // const breakPoints = useBreakpoint({
+  //   base: "base",
+  //   sm : "small",
+  //   md :"medium",
+  //   lg:"large",
+  //   xl : "xl",
+  //   "2xl" : '2xl'
+  // })
 
   const resetTimeout=()=> {
     if (timeoutRef.current) {
