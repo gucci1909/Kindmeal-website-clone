@@ -65,7 +65,7 @@ function Navbar() {
   const handleSignup = (signup) => {
     dispatch(SignupLoading);
     axios
-      .post(`https://immense-wildwood-85705.herokuapp.com/user/Signup`, {
+      .post(`https://signup-login-api.onrender.com/user/Signup`, {
         username: signup.username,
         password: signup.password,
         email: signup.email,
@@ -247,9 +247,9 @@ function Navbar() {
           Home
         </NavLink>
         <NavLink
-          to="/mealdeals"
+          to="/product"
           style={({ isActive }) => ({
-            backgroundColor: isActive ? "#2F855A" : "#68D391",
+            // backgroundColor: isActive ? "#2F855A" : "#68D391",
             color: "white",
             padding: "10px",
           })}
@@ -268,9 +268,9 @@ function Navbar() {
           KindMoments
         </NavLink>
         <NavLink
-          to="/hotpicks"
+          to="/product"
           style={({ isActive }) => ({
-            backgroundColor: isActive ? "#2F855A" : "#68D391",
+            // backgroundColor: isActive ? "#2F855A" : "#68D391",
             color: "white",
             padding: "10px",
           })}
@@ -279,9 +279,9 @@ function Navbar() {
           Hot Picks
         </NavLink>
         <NavLink
-          to="/recipes"
+          to="/product"
           style={({ isActive }) => ({
-            backgroundColor: isActive ? "#2F855A" : "#68D391",
+            // backgroundColor: isActive ? "#2F855A" : "#68D391",
             color: "white",
             padding: "10px",
           })}
@@ -290,9 +290,9 @@ function Navbar() {
           Recipes
         </NavLink>
         <NavLink
-          to="/directory"
+          to="/product"
           style={({ isActive }) => ({
-            backgroundColor: isActive ? "#2F855A" : "#68D391",
+            // backgroundColor: isActive ? "#2F855A" : "#68D391",
             color: "white",
             padding: "10px",
           })}
@@ -301,9 +301,9 @@ function Navbar() {
           Directory
         </NavLink>
         <NavLink
-          to="/articles"
+          to="/product"
           style={({ isActive }) => ({
-            backgroundColor: isActive ? "#2F855A" : "#68D391",
+            // backgroundColor: isActive ? "#2F855A" : "#68D391",
             color: "white",
             padding: "10px",
           })}
@@ -312,9 +312,9 @@ function Navbar() {
           Articles
         </NavLink>
         <NavLink
-          to="/help"
+          to="/product"
           style={({ isActive }) => ({
-            backgroundColor: isActive ? "#2F855A" : "#68D391",
+            // backgroundColor: isActive ? "#2F855A" : "#68D391",
             color: "white",
             padding: "10px",
           })}

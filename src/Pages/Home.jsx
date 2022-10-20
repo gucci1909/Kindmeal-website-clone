@@ -51,7 +51,7 @@ function Home() {
     <Box>
       <Text fontSize='3xl'>Latest News & Videos</Text>
       <Box ml={{ md: '270px', lg: '200px',xl:'30px' }} mr={{ md: 'auto', lg: '0px',xl:"40px" }} textAlign='centre' display='Flex' gap='1rem'>
-        {data.Latest_newVideo && data.Latest_newVideo.map((el)=>(
+        {data.Dicover_restaurants && data.Dicover_restaurants.map((el)=>(
         <Box key={el.id}>
            <Image cursor={'pointer'} src={el.img} h='300px' w='400px' alt={el.id}></Image>
            <Text fontSize='xl'>{el.title}</Text>

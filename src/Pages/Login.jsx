@@ -32,7 +32,7 @@ function Login() {
   };
   const handleLogin = (login)=>{
     dispatch(LoginLoading)
-    axios.post(`https://immense-wildwood-85705.herokuapp.com/user/Login`,{
+    axios.post(`https://signup-login-api.onrender.com/user/Login`,{
       username :login.email,
       password:login.password,
     }).then((res)=>{console.log(res.data.token)
@@ -63,6 +63,7 @@ function Login() {
      
 
       <Heading>Login and activate your account</Heading>
+      <Text>Please Login before seeing kindmeal Products (PrivateRoutes is being used here)</Text>
       <Container mt={10}>
         <Stack direction="column" gap="0.5rem">
           <Input
