@@ -30,7 +30,7 @@ GitHub,Mongo DB,Heroku
 
 
 
-## Authors
+## Author
 
 👤 **Umang Arora**
 
