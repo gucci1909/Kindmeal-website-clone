@@ -1,9 +1,7 @@
- # domineering-kick-7131
-
 # Kindmeal
 
 Project original website- https://www.kindmeal.my/
-> KindMeal.my is Malaysia's leading meat-free lifestyle platform, indulging you with delicious discounted vegetarian meals at cozy environments.
+> KindMeal.my is Malaysia's leading meat-free lifestyle platform, indulging you with delicious discounted vegetarian meals at cozy environments.I've made the clone website of kindmeal.my . I've created Home page , Signup page , Login page and Kindmeal products page
 
 ## Built With
 
