@@ -3,7 +3,7 @@
 # Kindmeal
 
 Project original website- https://www.kindmeal.my/
->Zappos.com is well respected and established retailer of shoes and clothes. The company is headquartered in Las Vegas, Nevada. Within ten years of establishment, it was acquired by Amazon.com and is one of the largest online shoe stores in the world.
+> KindMeal.my is Malaysia's leading meat-free lifestyle platform, indulging you with delicious discounted vegetarian meals at cozy environments.
 
 ## Built With
 
