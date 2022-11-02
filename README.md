@@ -15,6 +15,10 @@ Project original website- https://www.kindmeal.my/
 
 [Vercel link available here](https://domineering-kick-7131.vercel.app/)
 
+## Screenshots
+
+![App Screenshot](./images/kindmeal.png)
+
 ## Run Locally
 
 Clone the project
