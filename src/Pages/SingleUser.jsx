@@ -9,7 +9,7 @@ function SingleUser() {
   const [data,setData] = useState({});
   const { id } = useParams();
   const fetching = async(id)=>{
-    const res = await fetch(`https://calm-beyond-95466.herokuapp.com/api/Food/${id}`);
+    const res = await fetch(`https://umang-food-api.onrender.com/api/Food/${id}`);
     const data = await res.json();
     setData(data);
     

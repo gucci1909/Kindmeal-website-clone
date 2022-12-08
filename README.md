@@ -17,7 +17,7 @@ Project original website- https://www.kindmeal.my/
 
 ## Screenshots
 
-![App Screenshot](./images/kindmeal.png)
+![App Screenshot](/images/kindmeal.png)
 
 ## Run Locally
 

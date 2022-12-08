@@ -23,7 +23,7 @@ function Product() {
   const [page,setPage] = useState(IntialSearch);
   const fetching = async (page) => {
     try {
-      const res = await fetch(`https://calm-beyond-95466.herokuapp.com/api/Food?_page=${page}&_limit=5`);
+      const res = await fetch(`https://umang-food-api.onrender.com/api/Food?_page=${page}&_limit=5`);
       const data12 = await res.json();
       setData(data12);
     } catch (error) {}
