@@ -13,7 +13,7 @@ Project original website- https://www.kindmeal.my/
 
 ## Live Demo 
 
-[Vercel link available here](https://domineering-kick-7131.vercel.app/)
+[Netlify link available here](https://isnt-gucci1909-awesome.netlify.app/)
 
 ## Screenshots
 
